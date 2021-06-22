@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<!-- saved from url=(0692)https://render.githubusercontent.com/view/ipynb?color_mode=auto&commit=23115b9165c3a901b3e9b37742b4d8f8901f3f4d&enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6861727368616b736869742f637962657273656375726974792d626f6f7463616d702d736861706561692f323331313562393136356333613930316233653962333737343262346438663839303166336634642f43796265722532305365637572697479253230426f6f7463616d702f4461795f335f4c6f6f70735f6966253236656c73655f46756e6374696f6e732e6970796e62&nwo=harshakshit%2Fcybersecurity-bootcamp-shapeai&path=Cyber+Security+Bootcamp%2FDay_3_Loops_if%26else_Functions.ipynb&repository_id=377165306&repository_type=Repository#84230452-595d-44f3-bb4d-5d9957d4f5c2 -->
+<html data-color-mode="auto"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Render</title>
+  <meta name="referrer" content="never">
+    <script src="./ipynb-59079fa3cc9a2883c0ea.js.download" type="text/javascript"></script><link rel="stylesheet" href="./ipynb-59079fa3cc9a2883c0ea.css">
+
+
+</head>
+<body class="" data-render-url="https://render.githubusercontent.com" data-github-hostname="github.com" data-client-timeout-attempts="30">
+  <div class="render-shell js-render-shell" data-document-nwo="harshakshit/cybersecurity-bootcamp-shapeai" data-document-commit="23115b9165c3a901b3e9b37742b4d8f8901f3f4d" data-document-path="Cyber Security Bootcamp/Day_3_Loops_if&amp;else_Functions.ipynb" data-file="https://github-render.s3.amazonaws.com/prod/d96202b85af6f240aa9b4802485824a5ea177d358198ecf82402111f3d4d1d80-render.html?X-Amz-Expires=65&amp;X-Amz-Date=20210617T142535Z&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAJILR36AMCOMBK3MQ%2F20210617%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=600aff3b617782d92e620ffb3a990770f9096e419c7133a268f3bf0ec9f8423e" data-meta="https://github-render.s3.amazonaws.com/prod/d96202b85af6f240aa9b4802485824a5ea177d358198ecf82402111f3d4d1d80-meta.json?X-Amz-Expires=65&amp;X-Amz-Date=20210617T142535Z&amp;X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAJILR36AMCOMBK3MQ%2F20210617%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Signature=385decd9f2ce0b88aea810c2f8b58cfad15b5609c4844ad77bcc400a32a59e41" data-no-external-render="false">
+    
+
+<div class="render-info">
+  <div class="js-viewer-health render-health is-viewer-good">
+    <span class="symbol">⊖</span>
+    <span class="js-message message">Everything running smoothly!</span>
+  </div>
+</div>
+
+<div id="notebook" class="js-html">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1>Control Flow:<a class="anchor-link" href="https://render.githubusercontent.com/view/ipynb?color_mode=auto&amp;commit=23115b9165c3a901b3e9b37742b4d8f8901f3f4d&amp;enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6861727368616b736869742f637962657273656375726974792d626f6f7463616d702d736861706561692f323331313562393136356333613930316233653962333737343262346438663839303166336634642f43796265722532305365637572697479253230426f6f7463616d702f4461795f335f4c6f6f70735f6966253236656c73655f46756e6374696f6e732e6970796e62&amp;nwo=harshakshit%2Fcybersecurity-bootcamp-shapeai&amp;path=Cyber+Security+Bootcamp%2FDay_3_Loops_if%26else_Functions.ipynb&amp;repository_id=377165306&amp;repository_type=Repository#Control-Flow:">¶</a>
+</h1>
+<h4>Welcome to this lesson on Control Flow! Control flow is the sequence in which your code is run helping you in decision making.<br> Here, we'll learn about several tools in Python we can use to affect our code's control flow:</h4>
+<ul>
+<li>Conditional Statements</li>
+<li>Boolean Expressions</li>
+<li>For and While Loops</li>
+<li>Break and Continue</li>
+<li>Zip and Enumerate</li>
+<li>List Comprehensions</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3>Comparisons operators:<a class="anchor-link" href="https://render.githubusercontent.com/view/ipynb?color_mode=auto&amp;commit=23115b9165c3a901b3e9b37742b4d8f8901f3f4d&amp;enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6861727368616b736869742f637962657273656375726974792d626f6f7463616d702d736861706561692f323331313562393136356333613930316233653962333737343262346438663839303166336634642f43796265722532305365637572697479253230426f6f7463616d702f4461795f335f4c6f6f70735f6966253236656c73655f46756e6374696f6e732e6970796e62&amp;nwo=harshakshit%2Fcybersecurity-bootcamp-shapeai&amp;path=Cyber+Security+Bootcamp%2FDay_3_Loops_if%26else_Functions.ipynb&amp;repository_id=377165306&amp;repository_type=Repository#Comparisons-operators:">¶</a>
+</h3>
+<ul>
+<li>Equal:            ==</li>
+<li>Not Equal:        !=</li>
+<li>Greater than:     &gt;</li>
+<li>Less than:        &lt;</li>
+<li>Greater or equal: &gt;=</li>
+<li>Less or equal:    &lt;=</li>
+<li>Object Identity:  is - Checks weather two elements are same object and memory</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">lang</span> <span class="o">=</span> <span class="s1">'Java'</span>
+
+<span class="k">if</span> <span class="n">lang</span> <span class="o">==</span> <span class="s1">'Python'</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Language is Python'</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">lang</span> <span class="o">==</span> <span class="s1">'Java'</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Language is Java'</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'No match'</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Language is Java
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#and,or &amp; not:</span>
+
+<span class="n">user</span> <span class="o">=</span> <span class="s1">'Admin'</span>
+<span class="n">logged_in</span> <span class="o">=</span> <span class="kc">False</span>
+
+<span class="k">if</span> <span class="n">user</span> <span class="o">==</span> <span class="s1">'Admin'</span> <span class="ow">and</span> <span class="n">logged_in</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Admin page'</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Bad creds'</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Bad creds
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">user</span> <span class="o">=</span> <span class="s1">'Admin'</span>
+<span class="n">logged_in</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="k">if</span> <span class="n">user</span> <span class="o">==</span> <span class="s1">'Admin'</span> <span class="ow">or</span> <span class="n">logged_in</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Admin page'</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Bad creds'</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Admin page
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>True
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">==</span><span class="nb">id</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="ow">is</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2466803111560
+2466803109960
+False
+False
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4>False values: <br>
+</h4>
+<p>False<br>
+None<br>
+Numerical Zero<br>
+Any empty sequence. Eg: '', (), []<br>
+Any empty mapping. Eg: {}<br></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">condition</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">if</span> <span class="n">condition</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Evaluated to True'</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Evaluated to False'</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Evaluated to True
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3>Loops &amp; Iterations - for/while loops:<a class="anchor-link" href="https://render.githubusercontent.com/view/ipynb?color_mode=auto&amp;commit=23115b9165c3a901b3e9b37742b4d8f8901f3f4d&amp;enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6861727368616b736869742f637962657273656375726974792d626f6f7463616d702d736861706561692f323331313562393136356333613930316233653962333737343262346438663839303166336634642f43796265722532305365637572697479253230426f6f7463616d702f4461795f335f4c6f6f70735f6966253236656c73655f46756e6374696f6e732e6970796e62&amp;nwo=harshakshit%2Fcybersecurity-bootcamp-shapeai&amp;path=Cyber+Security+Bootcamp%2FDay_3_Loops_if%26else_Functions.ipynb&amp;repository_id=377165306&amp;repository_type=Repository#Loops-&amp;-Iterations---for/while-loops:">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+
+<span class="c1">#Iterates and returns each item using loop</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
+2
+3
+4
+5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Found!'</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    
+<span class="c1">#Breaks out of loop if the item is found</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
+2
+Found!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">num</span> <span class="o">==</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">'Found!'</span><span class="p">)</span>
+        <span class="k">continue</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+    
+<span class="c1">#Breaks out of loop if the item is found</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
+2
+Found!
+4
+5
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="s1">'abc'</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">num</span><span class="p">,</span><span class="n">letter</span><span class="p">)</span>
+
+<span class="c1">#Nested loop - Loop within a loop</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1 a
+1 b
+1 c
+2 a
+2 b
+2 c
+3 a
+3 b
+3 c
+4 a
+4 b
+4 c
+5 a
+5 b
+5 c
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+<span class="c1">#prints 0-9</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="c1">#prints 1-10, taking one step at a moment</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="c1">#prints 1-19, skipping a value after each iteration</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>1
+3
+5
+7
+9
+11
+13
+15
+17
+19
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### While loop:</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">x</span> <span class="o">+=</span> <span class="mi">1</span>
+
+<span class="s1">'''    </span>
+<span class="s1">while</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1>Functions:<a class="anchor-link" href="https://render.githubusercontent.com/view/ipynb?color_mode=auto&amp;commit=23115b9165c3a901b3e9b37742b4d8f8901f3f4d&amp;enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6861727368616b736869742f637962657273656375726974792d626f6f7463616d702d736861706561692f323331313562393136356333613930316233653962333737343262346438663839303166336634642f43796265722532305365637572697479253230426f6f7463616d702f4461795f335f4c6f6f70735f6966253236656c73655f46756e6374696f6e732e6970796e62&amp;nwo=harshakshit%2Fcybersecurity-bootcamp-shapeai&amp;path=Cyber+Security+Bootcamp%2FDay_3_Loops_if%26else_Functions.ipynb&amp;repository_id=377165306&amp;repository_type=Repository#Functions:">¶</a>
+</h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">hello_func</span><span class="p">():</span>
+    <span class="k">pass</span>
+
+<span class="c1">#pass keywords avoid errors if we want to leave that function for a while </span>
+<span class="c1">#Paranthesis () is where we pass the parameters</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">hello_func</span><span class="p">()</span> <span class="c1"># to run the function</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">hello_func</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Hello Function!'</span><span class="p">)</span>
+<span class="n">hello_func</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hello Function!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4>Functions allows to reuse the code just like variable.<a class="anchor-link" href="https://render.githubusercontent.com/view/ipynb?color_mode=auto&amp;commit=23115b9165c3a901b3e9b37742b4d8f8901f3f4d&amp;enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6861727368616b736869742f637962657273656375726974792d626f6f7463616d702d736861706561692f323331313562393136356333613930316233653962333737343262346438663839303166336634642f43796265722532305365637572697479253230426f6f7463616d702f4461795f335f4c6f6f70735f6966253236656c73655f46756e6374696f6e732e6970796e62&amp;nwo=harshakshit%2Fcybersecurity-bootcamp-shapeai&amp;path=Cyber+Security+Bootcamp%2FDay_3_Loops_if%26else_Functions.ipynb&amp;repository_id=377165306&amp;repository_type=Repository#Functions-allows-to-reuse-the-code-just-like-variable.">¶</a>
+</h4>
+<h4>Works as a machine, we give input to get the desirable output<a class="anchor-link" href="https://render.githubusercontent.com/view/ipynb?color_mode=auto&amp;commit=23115b9165c3a901b3e9b37742b4d8f8901f3f4d&amp;enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6861727368616b736869742f637962657273656375726974792d626f6f7463616d702d736861706561692f323331313562393136356333613930316233653962333737343262346438663839303166336634642f43796265722532305365637572697479253230426f6f7463616d702f4461795f335f4c6f6f70735f6966253236656c73655f46756e6374696f6e732e6970796e62&amp;nwo=harshakshit%2Fcybersecurity-bootcamp-shapeai&amp;path=Cyber+Security+Bootcamp%2FDay_3_Loops_if%26else_Functions.ipynb&amp;repository_id=377165306&amp;repository_type=Repository#Works-as-a-machine,-we-give-input-to-get-the-desirable-output">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">hello_func</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s1">'Hello Function!'</span>
+<span class="n">hello_func</span><span class="p">()</span>
+
+<span class="c1">#When we executes the function, then it's equivalent to the return value</span>
+<span class="c1">#As the return value is a string, then we can use string methods with the function</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">hello_func</span><span class="p">()</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>HELLO FUNCTION!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Passing an argument/parameter to the function.</span>
+
+<span class="k">def</span> <span class="nf">hello_func</span><span class="p">(</span><span class="n">greeting</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s1">'</span><span class="si">{}</span><span class="s1"> Function!'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">greeting</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">hello_func</span><span class="p">(</span><span class="s1">'Hi'</span><span class="p">))</span>
+
+<span class="c1"># greeting variable doesn't affect any variable outside the function. It's scope is local to this function</span>
+<span class="c1"># You can define a variable named greeting, outside the function.</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hi Function!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Passing two parameters and default values</span>
+
+<span class="k">def</span> <span class="nf">hello_func</span><span class="p">(</span><span class="n">greeting</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s1">'You'</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s1">'</span><span class="si">{}</span><span class="s1">, </span><span class="si">{}</span><span class="s1">!'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">greeting</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">hello_func</span><span class="p">(</span><span class="s1">'Hi'</span><span class="p">,</span><span class="s1">'harsh'</span><span class="p">))</span>
+
+<span class="c1">#You is default value for name parameter</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Hi, harsh!
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[42]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Use it when you aren't sure about the numbers of arguments(args) and keyword arguments (kwargs)</span>
+<span class="c1"># args - arguments</span>
+<span class="c1"># kwargs - Keyword arguments</span>
+
+<span class="k">def</span> <span class="nf">student_info</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">student_info</span><span class="p">(</span><span class="s1">'Math'</span><span class="p">,</span> <span class="s1">'Art'</span><span class="p">,</span> <span class="n">name</span> <span class="o">=</span> <span class="s1">'harsh'</span><span class="p">,</span> <span class="n">age</span> <span class="o">=</span> <span class="s1">'21'</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>('Math', 'Art')
+{'name': 'harsh', 'age': '21'}
+None
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Use it when you aren't sure about the numbers of arguments(args) and keyword arguments (kwargs)</span>
+<span class="c1"># args - arguments</span>
+<span class="c1"># kwargs - Keyword arguments</span>
+
+<span class="k">def</span> <span class="nf">student_info</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">args</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">kwargs</span><span class="p">)</span>
+
+<span class="n">courses</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'Math'</span><span class="p">,</span><span class="s1">'Art'</span><span class="p">]</span>
+<span class="n">info</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'name'</span><span class="p">:</span><span class="s1">'harsh'</span><span class="p">,</span> <span class="s1">'age'</span><span class="p">:</span><span class="s1">'21'</span><span class="p">}</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">student_info</span><span class="p">(</span><span class="n">courses</span><span class="p">,</span><span class="n">info</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>(['Math', 'Art'], {'name': 'harsh', 'age': '21'})
+{}
+None
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4>* &amp; ** is added to differentiate b/w arguments and keyword arguments<a class="anchor-link" href="https://render.githubusercontent.com/view/ipynb?color_mode=auto&amp;commit=23115b9165c3a901b3e9b37742b4d8f8901f3f4d&amp;enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6861727368616b736869742f637962657273656375726974792d626f6f7463616d702d736861706561692f323331313562393136356333613930316233653962333737343262346438663839303166336634642f43796265722532305365637572697479253230426f6f7463616d702f4461795f335f4c6f6f70735f6966253236656c73655f46756e6374696f6e732e6970796e62&amp;nwo=harshakshit%2Fcybersecurity-bootcamp-shapeai&amp;path=Cyber+Security+Bootcamp%2FDay_3_Loops_if%26else_Functions.ipynb&amp;repository_id=377165306&amp;repository_type=Repository#*-&amp;-**-is-added-to-differentiate-b/w-arguments-and-keyword-arguments">¶</a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3>Let's put everything together and create a program to check if a year is leap or not<a class="anchor-link" href="https://render.githubusercontent.com/view/ipynb?color_mode=auto&amp;commit=23115b9165c3a901b3e9b37742b4d8f8901f3f4d&amp;enc_url=68747470733a2f2f7261772e67697468756275736572636f6e74656e742e636f6d2f6861727368616b736869742f637962657273656375726974792d626f6f7463616d702d736861706561692f323331313562393136356333613930316233653962333737343262346438663839303166336634642f43796265722532305365637572697479253230426f6f7463616d702f4461795f335f4c6f6f70735f6966253236656c73655f46756e6374696f6e732e6970796e62&amp;nwo=harshakshit%2Fcybersecurity-bootcamp-shapeai&amp;path=Cyber+Security+Bootcamp%2FDay_3_Loops_if%26else_Functions.ipynb&amp;repository_id=377165306&amp;repository_type=Repository#Let&#39;s-put-everything-together-and-create-a-program-to-check-if-a-year-is-leap-or-not">¶</a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">month_days</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">31</span> <span class="p">,</span> <span class="mi">30</span> <span class="p">,</span> 
+             <span class="mi">31</span> <span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">31</span> <span class="p">,</span> <span class="mi">30</span><span class="p">,</span> 
+             <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">]</span>
+
+<span class="c1">#Number of days per month. First value placeholder for indexing purpose</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">is_leap</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">year</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="p">(</span><span class="n">year</span> <span class="o">%</span> <span class="mi">100</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">year</span> <span class="o">%</span> <span class="mi">400</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="c1">#Return True for leap years &amp; False for non-leap year.</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[54]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Return number of days in that month in that year.</span>
+
+<span class="k">def</span> <span class="nf">days_in_month</span><span class="p">(</span><span class="n">year</span><span class="p">,</span><span class="n">month</span><span class="p">):</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="mi">1</span> <span class="o">&lt;=</span> <span class="n">month</span> <span class="o">&lt;=</span> <span class="mi">12</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">'Invalid Month'</span>
+    <span class="k">if</span> <span class="n">month</span> <span class="o">==</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">is_leap</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">29</span>
+    
+    <span class="k">return</span> <span class="n">month_days</span><span class="p">[</span><span class="n">month</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">days_in_month</span><span class="p">(</span><span class="mi">2020</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>28
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+ 
+
+</div>
+
+  </div>
+
+  
+
+
+
+</body></html>
